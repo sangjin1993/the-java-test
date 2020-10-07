@@ -5,24 +5,26 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class StudyTest {
 
     @Test
-    void create(){
+    @DisplayName("스터티 만들기")
+    void create_new_study(){
         Study study = new Study();
         assertNotNull(study);
         System.out.println("create");
     }
 
-    @Test
-    @Disabled
-    void create1(){
-        System.out.println("create1");
-    }
-
     @BeforeAll
     static void beforeAll(){
         System.out.println("before all");
+    }
+
+    @Test
+    @DisplayName("스터디 만들기 ╯°□°）╯")
+    void create_new_study_again(){
+        System.out.println("create1");
     }
 
     @AfterAll
